@@ -4,6 +4,7 @@ class Program
 {
     // Esse programa solicita a nota do aluno de 0 a 100 e devolve a nota conceitual de A até F
     // Realizado o adicional de sinais + se o segundo digito for maior ou igual a 7 e - se o segundo digito for menor ou igual a 3
+    // Acrescetado a condição de aprovado ou nao.
     static void Main(string[] args)
     {
         int nota;
@@ -29,5 +30,14 @@ class Program
             sinal = "-";
 
         Console.WriteLine($"Sua nota é {conceito}{sinal}");
+        
+        if (nota >= 70)
+        {
+            Console.WriteLine("Você passou!");
+        }
+        else
+        {
+            Console.WriteLine("Mais sorte da próxima vez!");
+        }
     }
 }
