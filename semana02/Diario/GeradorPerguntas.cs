@@ -1,26 +1,35 @@
 using System;
+using System.Collections.Generic;
 
-//Classe GeradorPerguntas - Gera perguntas para o diário
 public class GeradorPerguntas
 {
-    private List<string> _perguntas; // Lista de perguntas
+    private List<string> _pergunta;
+
+    private Random random;
 
     public GeradorPerguntas()
     {
-        _perguntas = new List<string>
+        _pergunta = new List<string>()
         {
+            "Como foi seu dia hoje?",
+            "Qual foi a melhor coisa que aconteceu hoje?",
             "O que você aprendeu hoje?",
-            "Qual foi o ponto alto do seu dia?",
-            "Houve algum desafio que você superou?",
-            "Como você se sentiu durante o dia?",
-            "O que você poderia ter feito melhor?"
+            "Existe algo que você gostaria de melhorar amanhã?",
+            "Pelo que você é grato hoje?",
+            "Qual foi o momento mais importante do seu dia?",
+            "Como você está se sentindo hoje?",
+            "O que fez você sorrir hoje?",
+            "Qual foi o maior desafio que você enfrentou hoje?",
+            "O que você gostaria de lembrar deste dia?"
         };
+
+        random = new Random();
     }
 
     public string ObterPergunta()
     {
-        Random random = new Random();
-        int index = random.Next(_perguntas.Count);
-        return _perguntas[index];
+        int indice = random.Next(_pergunta.Count);
+
+        return _pergunta[indice];
     }
 }

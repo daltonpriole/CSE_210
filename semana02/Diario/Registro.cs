@@ -1,18 +1,32 @@
 using System;
 
-// Classe Registro - Representa um registro de atividades diárias
-
 public class Registro
 {
-    public string _data; // Data do registro
-    public string _textPergunta; // Pergunta do registro
-    public string _textResposta; // Resposta do registro 
+    private string data;
+    private string textPergunta;
+    private string textResposta;
 
-    public void ExibirRegistro()
+    public Registro(string pergunta, string resposta)
     {
-        Console.WriteLine($"Data: {_data}");
-        Console.WriteLine($"Pergunta: {_textPergunta}");
-        Console.WriteLine($"Resposta: {_textResposta}");
+        data = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        textPergunta = pergunta;
+        textResposta = resposta;
+    }
+
+    public void Exibir()
+    {
+        Console.WriteLine("========================================");
+        Console.WriteLine($"Data: {data}");
+        Console.WriteLine($"Pergunta: {textPergunta}");
+        Console.WriteLine($"Resposta: {textResposta}");
+        Console.WriteLine("========================================");
+    }
+
+    public override string ToString()
+    {
+        return $"Data: {data}\n" +
+               $"Pergunta: {textPergunta}\n" +
+               $"Resposta: {textResposta}\n" +
+               "----------------------------------------";
     }
 }
-

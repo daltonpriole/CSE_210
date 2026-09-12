@@ -1,73 +1,65 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
-//Classe Diario - Representa um diário de atividades diárias
 public class Diario
 {
-    public string _nome; // Nome do diário
-    public List<Registro> _registros; // Lista de registros diários
+    private List<Registro> _registro;
 
-    public Diario()
+    private string arquivo;
+
+    public Diario(string registro)
     {
-        _registros = new List<Registro>();
+        _registro = new List<Registro>();
     }
 
-    public void AdicionarRegistro(Registro registro)
+    public void AdicionarRegistro(Registro novo)
     {
-        _registros.Add(registro);
+        _registro.Add(novo);
     }
 
-    public void SalvarEmArquivo(string nomeArquivo)
+    public void ExibirTodos()
     {
-        using (System.IO.StreamWriter file = new System.IO.StreamWriter(nomeArquivo))
+        if (_registro.Count == 0)
         {
-            file.WriteLine($"Diário: {_nome}");
-            file.WriteLine("Registros:");
-            foreach (var registro in _registros)
+            Console.WriteLine("Nenhum registro encontrado.");
+            return;
+        }
+
+        foreach (Registro registro in _registro)
+        {
+            registro.Exibir();
+        }
+    }
+
+    public void SalvarArquivo(string nomeArquivo)
+    {
+        arquivo = nomeArquivo;
+
+        using (StreamWriter escritor = new StreamWriter(arquivo, false))
+        {
+            foreach (Registro registro in _registro)
             {
-                file.WriteLine($"Data: {registro._data}");
-                file.WriteLine($"Pergunta: {registro._textPergunta}");
-                file.WriteLine($"Resposta: {registro._textResposta}");
-                file.WriteLine(); // Adiciona uma linha em branco entre os registros
+                escritor.WriteLine(registro.ToString());
             }
         }
     }
 
-    public void CarregarDeArquivo(string nomeArquivo)
+    public void CarregarArquivo(string nomeArquivo)
     {
-        if (System.IO.File.Exists(nomeArquivo))
+        if (!File.Exists(nomeArquivo))
         {
-            using (System.IO.StreamReader file = new System.IO.StreamReader(nomeArquivo))
-            {
-                _nome = file.ReadLine().Replace("Diário: ", "");
-                file.ReadLine(); // Pula a linha "Registros:"
-                _registros.Clear();
-
-                while (!file.EndOfStream)
-                {
-                    Registro registro = new Registro();
-                    registro._data = file.ReadLine().Replace("Data: ", "");
-                    registro._textPergunta = file.ReadLine().Replace("Pergunta: ", "");
-                    registro._textResposta = file.ReadLine().Replace("Resposta: ", "");
-                    _registros.Add(registro);
-                    file.ReadLine(); // Pula a linha em branco entre os registros
-                }
-            }
+            return;
         }
-        else
-        {
-            Console.WriteLine($"O arquivo '{nomeArquivo}' não foi encontrado.");
-        }
-    }
 
-    public void ExibirTodosOsRegistros()
-    {
-        Console.WriteLine($"Diário: {_nome}");
-        Console.WriteLine("Registros:");
-        foreach (var registro in _registros)
+        string[] linhas = File.ReadAllLines(nomeArquivo);
+
+        Console.WriteLine("Registros encontrados no arquivo:");
+        Console.WriteLine();
+
+        foreach (string linha in linhas)
         {
-            registro.ExibirRegistro();
-            Console.WriteLine(); // Adiciona uma linha em branco entre os registros
+            Console.WriteLine(linha);
         }
     }
 }
