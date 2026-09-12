@@ -1,5 +1,6 @@
 using System;
-
+//Programa de diário interativo que permite ao usuário registrar respostas a perguntas diárias, exibir registros, salvar e carregar registros de um arquivo.
+//Como Implementação de criatividade foi inserido a localização do usuario qdo preenche um registro novo
 class Program
 {
     static void Main(string[] args)
@@ -42,9 +43,13 @@ class Program
                     Console.Write("Sua resposta: ");
                     string resposta = Console.ReadLine();
 
+                    Console.Write("Sua localização: ");
+                    string localizacao = Console.ReadLine();
+
                     Registro registro = new Registro(
                         pergunta,
-                        resposta
+                        resposta,
+                        localizacao
                     );
 
                     diario.AdicionarRegistro(registro);

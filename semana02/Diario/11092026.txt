@@ -1,0 +1,10 @@
+Data: 12/09/2026 02:26:13
+Pergunta: Qual foi o maior desafio que você enfrentou hoje?
+Resposta: Uma Reuniao com clientes do exterior
+Localização: sao carlos
+----------------------------------------
+Data: 12/09/2026 02:26:34
+Pergunta: O que você aprendeu hoje?
+Resposta: Muito mis sobre C#
+Localização: sao carlos
+----------------------------------------

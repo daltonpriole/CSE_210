@@ -1,8 +1,0 @@
-Data: 11/09/2026 23:23:13
-Pergunta: Qual foi a melhor coisa que aconteceu hoje?
-Resposta: Ter Comemorado aniversario de um tio meu
-----------------------------------------
-Data: 11/09/2026 23:24:07
-Pergunta: Qual foi o maior desafio que você enfrentou hoje?
-Resposta: Reuniao com cliente do exterior
-----------------------------------------
