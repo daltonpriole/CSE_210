@@ -6,10 +6,10 @@ class Program
     static void Main(string[] args)
     {
         bool executando = true;
-        string newregistro = "";
+        string newRegistro = "";
 
         GeradorPerguntas gerador = new GeradorPerguntas();
-        Diario diario = new Diario(newregistro);
+        Diario diario = new Diario(newRegistro);
         
         while (executando)
         {

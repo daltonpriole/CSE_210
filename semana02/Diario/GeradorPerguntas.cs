@@ -5,7 +5,7 @@ public class GeradorPerguntas
 {
     private List<string> _pergunta;
 
-    private Random random;
+    private Random _random;
 
     public GeradorPerguntas()
     {
@@ -23,12 +23,12 @@ public class GeradorPerguntas
             "O que você gostaria de lembrar deste dia?"
         };
 
-        random = new Random();
+        _random = new Random();
     }
 
     public string ObterPergunta()
     {
-        int indice = random.Next(_pergunta.Count);
+        int indice = _random.Next(_pergunta.Count);
 
         return _pergunta[indice];
     }

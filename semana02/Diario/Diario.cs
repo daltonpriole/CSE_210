@@ -6,11 +6,12 @@ public class Diario
 {
     private List<Registro> _registro;
 
-    private string arquivo;
+    private string _arquivo;
 
     public Diario(string registro)
     {
         _registro = new List<Registro>();
+        _arquivo = registro;
     }
 
     public void AdicionarRegistro(Registro novo)
@@ -34,9 +35,9 @@ public class Diario
 
     public void SalvarArquivo(string nomeArquivo)
     {
-        arquivo = nomeArquivo;
+        _arquivo = nomeArquivo;
 
-        using (StreamWriter escritor = new StreamWriter(arquivo, false))
+        using (StreamWriter escritor = new StreamWriter(_arquivo, false))
         {
             foreach (Registro registro in _registro)
             {

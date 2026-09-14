@@ -1,0 +1,10 @@
+Data: 14/09/2026 14:03:47
+Pergunta: Como foi seu dia hoje?
+Resposta: Muito bom
+Localização: Sao Carlos-Sp
+----------------------------------------
+Data: 14/09/2026 14:04:35
+Pergunta: Existe algo que você gostaria de melhorar amanhã?
+Resposta: Sim ter mais paciencia
+Localização: São carlos
+----------------------------------------
