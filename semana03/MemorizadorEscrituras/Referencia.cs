@@ -1,6 +1,6 @@
 //Class Referencia que armazenará as referências das escrituras
 using System;
-class Referencia
+public class Referencia
 {
     //1. Atributos Privados(private)
     private string _livro;

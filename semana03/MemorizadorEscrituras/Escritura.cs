@@ -1,7 +1,7 @@
 //class Escritura que armazenará as escrituras e devolvera de forma aleatória quando solicitado
 using System;
 using System.Collections.Generic;
-class Escritura 
+public class Escritura 
 {
     //1. Atributos Privados(private)
     private Referencia _referencia;
@@ -30,20 +30,38 @@ class Escritura
         string textoCompleto = string.Join(" ", textosDasPalavras);
 
     return $"{_referencia.ObterTexto()} {textoCompleto}";
-
+    }
+    public string ObterTextoDaReferencia()
+    {
+        return _referencia.ObterTexto();
     }
     public void OcultarPalavrasAleatorias(int numeroParaOcultar)
     {
         // Implementação para ocultar palavras aleatórias
         Random random = new Random();
+        List<Palavra> palavrasVisiveis = new List<Palavra>(); // Lista para armazenar as palavras visíveis
+        // Adiciona apenas as palavras visíveis à lista
+        foreach (Palavra p in _palavras)
+        {
+            if (!p.EstaOculta())
+            {
+                palavrasVisiveis.Add(p);
+            }
+        }
         // O laço roda apenas a quantidade de vezes solicitada
         for (int i = 0; i < numeroParaOcultar; i++)
         {
             // Sorteia um índice válido da lista (de 0 até o total de palavras - 1)
-            int indiceSorteado = random.Next(_palavras.Count);
-            
+            int indiceSorteado = random.Next(palavrasVisiveis.Count);
+
             // Pega a palavra que está nessa posição sorteada e oculta ela
-            _palavras[indiceSorteado].Ocultar();
+            palavrasVisiveis[indiceSorteado].Ocultar();
+
+            // 1. Remove a palavra que acabou de ocultar para não sorteá-la de novo no próximo loop
+            palavrasVisiveis.RemoveAt(indiceSorteado);
+
+            // 2. Se não sobrou nenhuma palavra visível na lista, interrompe o 'for' imediatamente
+            if (palavrasVisiveis.Count == 0) break;
         }
     }
     public bool EstaCompletamenteOculta()
@@ -58,8 +76,4 @@ class Escritura
         }
         return true; // Se todas as palavras estiverem ocultas, retorna verdadeiro
     }
-
-
-
-
 }
