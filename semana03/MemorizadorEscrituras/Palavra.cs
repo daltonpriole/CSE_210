@@ -29,13 +29,13 @@ class Palavra
     }
     public string ObterTexto() {
         // Implementação para obter o texto da palavra
-        if (_estaOculta)
+        if (_estaOculta) // Retorna um sublinhado pra cada letra das palavras ocultas
         {
-            return "____"; // Retorna um espaço em branco ou algum marcador para palavras ocultas
+            return new string('_', _texto.Length);
         }
-        else
+        else // Retorna o texto da palavra
         {
-            return _texto; // Retorna o texto da palavra se não estiver oculta
+            return _texto; 
         }
     }
 }
