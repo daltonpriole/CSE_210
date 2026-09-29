@@ -10,11 +10,18 @@ public class TarefaMatematica : Tarefa
 
 
     //2.Construtores Publicos
+     public TarefaMatematica(string nomeEstudante, string topico, string capitulo, string problemas)
+        : base(nomeEstudante, topico)
+    {
+        // Aqui definimos as variáveis específicas de TarefaDeMatematica
+        _capitulo = capitulo;
+        _problemas = problemas;
+    }
      public string ObterCapitulo()
     {
         return _capitulo;
     }
-    public void DefinirNome(string capitulo)
+    public void DefinirCapitulo(string capitulo)
     {
         _capitulo = capitulo;
     }

@@ -11,6 +11,11 @@ public class Tarefa
 
 
     //2. Construtores Publicos
+     public Tarefa(string nomeEstudante, string topico)
+    {
+        _nomeEstudante = nomeEstudante;
+        _topico = topico;
+    }
     public string ObterNome()
     {
         return _nomeEstudante;

@@ -9,6 +9,12 @@ public class TarefaRedacao : Tarefa
 
 
     //2.Construtores
+     public TarefaRedacao(string nomeEstudante, string topico, string titulo)
+        : base(nomeEstudante, topico)
+    {
+        // Aqui definimos quaisquer variáveis específicas da classe TarefaDeRedacao
+        _titulo = titulo;
+    }
     public string ObterTitulo()
     {
         return _titulo;
@@ -20,7 +26,7 @@ public class TarefaRedacao : Tarefa
 
 
     //3.Metodos
-    public string ObterInformacoesRedacao()
+    public string ObterInformacaoRedacao()
     {
         return $"{_nomeEstudante} - {_topico} Titulo:{_titulo}, por {_nomeEstudante}";
     }
