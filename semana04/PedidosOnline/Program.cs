@@ -39,6 +39,7 @@ class Program
         Console.WriteLine(pedido1.EtiquetaEmbalagem());
 
         Console.WriteLine("--- Etiqueta de Envio ---");
+        Console.WriteLine(cliente1.Nome);
         Console.WriteLine(pedido1.EtiquetaEndereco());
         Console.WriteLine($"Taxa de Envio: ${pedido1.CalcTaxaEnvio():F2}");
 
@@ -60,6 +61,7 @@ class Program
         Console.WriteLine(pedido2.EtiquetaEmbalagem());
 
         Console.WriteLine("--- Etiqueta de Envio ---");
+        Console.WriteLine(cliente2.Nome);
         Console.WriteLine(pedido2.EtiquetaEndereco());
         Console.WriteLine($"Taxa de Envio: ${pedido2.CalcTaxaEnvio():F2}");
 
