@@ -18,10 +18,28 @@ public class Atividades
         _duracao = duracao;
     }
 
+
     //3.Métodos Públicos
     public virtual void Executar()
     {
         
     }
-
+    public void ExibirMsgInicial()
+    {
+        Console.WriteLine($"Bem-vindo à atividade: {_nome}");
+        Console.WriteLine($"Mensagem: {_descricao}");
+    }
+    public void ExibirMsgFinal()
+    {
+        Console.WriteLine($"Parabéns! Você concluiu a atividade: {_nome}");
+        Console.WriteLine($"Mensagem: {_descricao}");
+    }
+    public void ExibirProgresso(int segundos)
+    {
+        Console.WriteLine($"Progresso: {segundos} segundos concluído.");
+    }
+    public void ExibirContagemRegressiva(int segundos)
+    {
+        Console.WriteLine($"Contagem regressiva: {segundos} segundos restantes.");
+    }
 }

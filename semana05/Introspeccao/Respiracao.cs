@@ -13,6 +13,7 @@ public class Respiracao : Atividades
        
     }
 
+
     //3.Métodos Públicos
     public override void Executar()
     {

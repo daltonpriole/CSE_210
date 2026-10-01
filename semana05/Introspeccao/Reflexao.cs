@@ -18,6 +18,7 @@ public class Reflexao : Atividades
         _textPerg.Add("Pergunta de reflexão 1");
     }
 
+
     //3.Métodos Públicos
     public override void Executar()
     {
