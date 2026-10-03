@@ -29,7 +29,6 @@ public class Respiracao : Atividades
                 if (DateTime.Now >= tempoFinal) break;
 
                 Console.Write("Agora expire...");
-                // Na expiração também começamos soltando o ar rápido e terminando devagar
                 ContagemRespiracaoDinamica(4, desacelerar: true);
                 Console.WriteLine();
             }

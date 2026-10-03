@@ -27,9 +27,9 @@ public class Listagem : Atividades
     //3.Métodos Públicos
     public override void Executar()
     {
-       string promptEscolhido = _pergunta[_random.Next(_pergunta.Count)];
+       string perguntaEscolhido = _pergunta[_random.Next(_pergunta.Count)];
         Console.WriteLine("\nListe o máximo de respostas que conseguir para a seguinte pergunta:");
-        Console.WriteLine($"--- {promptEscolhido} ---");
+        Console.WriteLine($"--- {perguntaEscolhido} ---");
         Console.Write("Você pode começar em: ");
         ExibirContagemRegressiva(5);
         Console.WriteLine(); // Quebra a linha para iniciar a digitação

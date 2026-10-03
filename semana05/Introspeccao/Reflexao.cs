@@ -42,9 +42,9 @@ public class Reflexao : Atividades
     //3.Métodos Públicos
     public override void Executar()
     {
-        string promptEscolhido = _textRefle[_random.Next(_textRefle.Count)];
+        string textoEscolhido = _textRefle[_random.Next(_textRefle.Count)];
         Console.WriteLine("\nReflita sobre a seguinte frase:");
-        Console.WriteLine($"\n--- {promptEscolhido} ---\n");
+        Console.WriteLine($"\n--- {textoEscolhido} ---\n");
         Console.WriteLine("Quando tiver algo em mente, pressione enter para continuar.");
         Console.ReadLine();
         Console.WriteLine("Agora reflita sobre cada uma das seguintes perguntas a seguir em relação a essa experiência.");
@@ -61,27 +61,5 @@ public class Reflexao : Atividades
             ExibirProgresso(5);
             Console.WriteLine();
         }
-    }
-    public string ObterTextoReflexaoRandon()
-    {
-        // Lógica para obter o texto de reflexão
-        int index = _random.Next(_textRefle.Count);
-        return _textRefle[index];
-    }
-    public string ObterTextoPerguntaRandon()
-    {
-        // Lógica para obter a pergunta de reflexão
-        int index = _random.Next(_textPerg.Count);
-        return _textPerg[index];
-    }
-    public void ExibirReflexoes()
-    {
-        string textoReflexao = ObterTextoReflexaoRandon();
-        Console.WriteLine($"Texto de Reflexão: {textoReflexao}");
-    }
-    public void ExibirPerguntas()
-    {
-        string perguntaReflexao = ObterTextoPerguntaRandon();
-        Console.WriteLine($"Pergunta de Reflexão: {perguntaReflexao}");
     }
 }

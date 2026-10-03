@@ -45,7 +45,7 @@ using System.Collections.Generic;
             {
                 Console.Clear();
                 Console.WriteLine("\nSua afirmação positiva do dia foi registrada com sucesso:");
-                Console.WriteLine($"\n✨ \"{agradecimento}\" ✨");
+                Console.WriteLine($" {agradecimento}");
                 
                 // Deixa a mensagem positiva na tela com o spinner rodando pelo tempo restante
                 int tempoRestante = _duracao - tempoReflexao;
