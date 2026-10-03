@@ -4,39 +4,52 @@ using System;
 public class Listagem : Atividades
 {
     //1.Atributos Privados/Protected
-    private int _contador;
     private List<string> _pergunta;
-
+    private Random _random;
 
     //2.Construtor
-    public Listagem(string nome, string descricao, int duracao, List<string> perguntas)
-        : base(nome, descricao, duracao)
+    public Listagem() : base()
     {
-        _pergunta = perguntas;
-        _pergunta.Add("Pergunta de listagem 1");
-        _contador = 0;
-    }
+        _nome = "Listando";
+            _descricao = "Esta atividade vai ajudar você a refletir sobre as coisas boas da sua vida, pedindo que você liste o máximo de coisas que puder em uma determinada área.";
+            _random = new Random();
 
+            _pergunta = new List<string>
+            {
+                "Quem são as pessoas que você aprecia?",
+                "Quais são seus pontos fortes pessoais?",
+                "Quem são as pessoas que você ajudou esta semana?",
+                "Quando você sentiu o Espírito Santo neste mês?",
+                "Quem são alguns dos seus heróis pessoais?"
+            };
+    }
 
     //3.Métodos Públicos
     public override void Executar()
     {
-        Console.WriteLine($"Iniciando a atividade de listagem: {_nome}");
-        Console.WriteLine($"Descrição: {_descricao}");
-        Console.WriteLine($"Duração: {_duracao} minutos");
-    
-        // Lógica para iniciar a atividade de listagem
-    }
-    public void ObterPerguntaRd()
-    {
-        // Lógica para obter a pergunta de listagem
-        string perguntaListagem = "Pergunta de listagem";
-        Console.WriteLine($"Pergunta de Listagem: {perguntaListagem}");
-        _contador++;
-    }
-    public List<string> ObterListUser()
-    {
-        // Lógica para obter a lista de perguntas
-        return _pergunta;
+       string promptEscolhido = _pergunta[_random.Next(_pergunta.Count)];
+        Console.WriteLine("\nListe o máximo de respostas que conseguir para a seguinte pergunta:");
+        Console.WriteLine($"--- {promptEscolhido} ---");
+        Console.Write("Você pode começar em: ");
+        ExibirContagemRegressiva(5);
+        Console.WriteLine(); // Quebra a linha para iniciar a digitação
+
+        int contadorItens = 0;
+        DateTime tempoFinal = DateTime.Now.AddSeconds(_duracao);
+
+        // Permite que o usuário insira itens até que o tempo acabe
+        while (DateTime.Now < tempoFinal)
+        {
+            Console.Write("> ");
+            string item = Console.ReadLine();
+                
+            if (!string.IsNullOrEmpty(item))
+            {
+                contadorItens++;
+            }
+        }
+        Console.WriteLine();
+        Console.WriteLine($"\nVocê listou {contadorItens} itens. Ótimo trabalho!");
+        ExibirProgresso(3);
     }
 }
