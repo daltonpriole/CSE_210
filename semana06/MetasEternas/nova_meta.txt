@@ -1,0 +1,4 @@
+25
+MetaSimples|oracao|orar para revelacao |5|True
+MetaEterna|ler|leitura diaria de obras padrao|5|1
+MetaDeListaDeTarefas|rotina diaria|tarefas do dia como ler orar e ponderar|5|3|10|5

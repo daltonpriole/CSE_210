@@ -1,0 +1,4 @@
+0
+MetaEterna|Leitura Diaria|Ler uma obra padrao anualmente|50|0
+MetaSimples|Jejum Mensal|Fazer jejum pelo menos 12 vezes esse ano|25|False
+MetaDeListaDeTarefas|Tarefas semanais|Uma lista de tarefas para realizar semanalmente|10|0|4|6

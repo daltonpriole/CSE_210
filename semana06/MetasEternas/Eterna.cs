@@ -5,23 +5,25 @@ using System;
 class Eterna : Metas
 {
     //Atributos
-
+    private int _realizadas;
 
     //Construtor e Getters e Setters
-    public Eterna(string nome, string descricao, int pontos) : base(nome, descricao, pontos)
+    public Eterna(string nome, string descricao, int pontos, int realizadas) : base(nome, descricao, pontos)
     {
-        
+        _realizadas = realizadas;
     }
 
     // Métodos
-    public override void RegistrarEvento()
+    public override int RegistrarEvento()
     {
-        // Implementação específica para metas eternas
+        //Contabilizar para metas eternas
+        _realizadas++;
+        return Pontos;
     }
 
     public override bool EstaConcluida()
     {
-        // Implementação específica para metas eternas
+        //Conclusao para metas eternas
         return false; // Exemplo: metas eternas nunca são concluídas
     }
 
@@ -33,8 +35,8 @@ class Eterna : Metas
 
     public override string ObterRepresentacao()
     {
-        // Implementação específica para metas eternas
-        return "[ ] Meta eterna (não concluída)";
+        //Representacao para metas eternas
+       return $"MetaEterna|{_nome}|{_descricao}|{_pontos}|{_realizadas}";
     }
 
 }

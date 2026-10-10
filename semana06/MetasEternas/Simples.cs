@@ -10,17 +10,20 @@ class Simples : Metas
     {
         _estaConcluido = estaConcluido;
     }
-    public bool EstaConcluido
-    {
-        get { return _estaConcluido; }
-        set { _estaConcluido = value; }
-    }
-
-
+   
     // Métodos
-    public override void RegistrarEvento()
-    {
-        _estaConcluido = true;
+    public override int RegistrarEvento()
+    {   
+        if (!_estaConcluido)
+        {
+            _estaConcluido = true;
+            return Pontos; // Retorna os pontos da meta simples
+        }
+        else
+        {
+            Console.WriteLine("Esta meta já foi concluída.");
+            return 0; // Retorna 0 se a meta já estiver concluída
+        }
     }
 
     public override bool EstaConcluida()
@@ -30,12 +33,13 @@ class Simples : Metas
 
     public override string ObterDetalhes()
     {
-        return $"Meta Simples: {Nome} - {Descricao} - {Pontos} pontos";
+        string status = _estaConcluido ? "[X]" : "[ ]";
+        return $"Meta Simples: {Nome} - {Descricao}";
     }
 
     public override string ObterRepresentacao()
     {
-        return _estaConcluido ? "[X] Meta simples concluída" : "[ ] Meta simples pendente";
+        return $"MetaSimples|{_nome}|{_descricao}|{_pontos}|{_estaConcluido}";
     }
     
 }

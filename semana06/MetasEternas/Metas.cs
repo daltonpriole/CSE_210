@@ -32,7 +32,7 @@ public abstract class Metas
         _pontos = pontos;
     }
 
-    public abstract void RegistrarEvento();
+    public abstract int RegistrarEvento();
 
     public abstract bool EstaConcluida();
 

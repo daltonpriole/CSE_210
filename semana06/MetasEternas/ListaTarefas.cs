@@ -20,27 +20,40 @@ class ListaTarefas : Metas
 
 
     // Métodos
-    public override void RegistrarEvento()
+    public override int RegistrarEvento()
     {
-        // Implementação específica para metas eternas
+        //Logica Registrar eventos para metas eternas
+        if (_concluidas < _total)
+        {
+            _concluidas++;
+            if (_concluidas == _total)
+            {
+                return Pontos + _bonus; // Retorna os pontos da meta de lista de tarefas com bônus
+            }
+            else
+            {
+                return Pontos; // Retorna os pontos da meta de lista de tarefas sem bônus
+            }
+        }
+        else
+        {
+            Console.WriteLine("Esta meta já foi concluída.");
+        }
+        return 0;
     }
 
-    public override bool EstaConcluida()
-    {
-        // Implementação específica para metas eternas
-        return false; // Exemplo: metas eternas nunca são concluídas
-    }
+    public override bool EstaConcluida() => _concluidas >= _total;
 
     public override string ObterDetalhes()
     {
-        // Implementação específica para metas eternas
-        return $"Meta Eterna: {Nome} - {Descricao} - {Pontos} pontos";
+        // Logica Obter detalhes para metas eternas
+        string status = EstaConcluida() ? "[X]" : "[ ]";
+        return $"{status} {_nome} ({_descricao}) -- Progresso: {_concluidas}/{_total}";
     }
 
     public override string ObterRepresentacao()
-    {
-        // Implementação específica para metas eternas
-        return "[ ] Meta eterna (não concluída)";
-    }
+        {
+            return $"MetaDeListaDeTarefas|{_nome}|{_descricao}|{_pontos}|{_concluidas}|{_total}|{_bonus}";
+        }
        
 }
