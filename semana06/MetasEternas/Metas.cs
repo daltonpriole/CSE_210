@@ -2,12 +2,12 @@
 
 using System;
 
-abstract class Metas
+public abstract class Metas
 {
     //Atributos
     protected string _nome;
     protected string _descricao;
-    protected string _pontos;
+    protected int _pontos;
 
     //Construtor / Getters e Setters
     public string Nome
@@ -20,12 +20,12 @@ abstract class Metas
         get { return _descricao; }
         set { _descricao = value; }
     }
-    public string Pontos
+    public int Pontos
     {
         get { return _pontos; }
         set { _pontos = value; }
     }
-    public Metas(string nome, string descricao, string pontos)
+    public Metas(string nome, string descricao, int pontos)
     {
         _nome = nome;
         _descricao = descricao;
