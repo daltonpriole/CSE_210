@@ -15,9 +15,9 @@ class Program
 
         // Exibindo resumos das atividades
         Console.WriteLine("\nResumo das atividades:");
-        Console.WriteLine($"Corrida: {corrida.Nome} - {corrida.ExibirResumo()}");
-        Console.WriteLine($"Bicicleta: {bicicleta.Nome} - {bicicleta.ExibirResumo()}");
-        Console.WriteLine($"Natação: {natacao.Nome} - {natacao.ExibirResumo()}");
+        Console.WriteLine($"Corrida: {corrida.ExibirResumo()}");
+        Console.WriteLine($"Bicicleta: {bicicleta.ExibirResumo()}");
+        Console.WriteLine($"Natação: {natacao.ExibirResumo()}");
         
     }
 }

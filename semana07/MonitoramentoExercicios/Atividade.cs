@@ -38,7 +38,7 @@ public abstract class Atividade
     //dia mes ano Atividade (duracao): Distância x km, Velocidade: x km/h, Ritmo: x min por km
      public string ExibirResumo()
     {
-        return ObterDistancia() + " km, " + ObterVelocidade() + " km/h, " + ObterRitmo() + " min/km";
+        return _data.ToString("dd/MM/yyyy") + " " + _nome + " (" + _duracao + " min): " + ObterDistancia() + " km, " + ObterVelocidade() + " km/h, " + ObterRitmo() + " min/km";
     }
 
     public abstract double ObterDistancia();
