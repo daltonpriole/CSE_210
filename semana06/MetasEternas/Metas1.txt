@@ -1,0 +1,5 @@
+11
+MetaSimples|Mensagem|preparar uma mensagem|2|True
+MetaSimples|Discurso|Dar um discurso na Sacramental|5|False
+MetaEterna|Leitura|Ler todos os dia pela manha|2|2
+MetaDeListaDeTarefas|livro de mormon|ler 10 capitulos por semana|5|1|2|2

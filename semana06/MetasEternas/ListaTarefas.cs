@@ -48,12 +48,12 @@ class ListaTarefas : Metas
     {
         // Logica Obter detalhes para metas eternas
         string status = EstaConcluida() ? "[X]" : "[ ]";
-        return $"{status} {_nome} ({_descricao}) -- Progresso: {_concluidas}/{_total}";
+        return $"{status} Meta Lista de tarefa: {_nome} ({_descricao}) -- Progresso: {_concluidas}/{_total}";
     }
 
     public override string ObterRepresentacao()
         {
-            return $"MetaDeListaDeTarefas|{_nome}|{_descricao}|{_pontos}|{_concluidas}|{_total}|{_bonus}";
+            return $"MetaDeListaDeTarefas|{_nome}|{_descricao}|{_concluidas}|{_total}|{_bonus}|{_pontos}";
         }
        
 }

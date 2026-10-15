@@ -1,4 +1,8 @@
 25
 MetaSimples|oracao|orar para revelacao |5|True
 MetaEterna|ler|leitura diaria de obras padrao|5|1
-MetaDeListaDeTarefas|rotina diaria|tarefas do dia como ler orar e ponderar|5|3|10|5
+MetaDeListaDeTarefas|tarefas do dia como ler orar e ponderar|rotina diaria|5|5|10|5
+MetaSimples|Mensagem familiar|Dar uma mensagem na reuniao familiar|5|False
+MetaSimples|Saude|Correr 5km|10|False
+MetaEterna|Leitura Diaria|Ler todas as manhas ao levantar|5|0
+MetaDeListaDeTarefas|limpeza|Seu mes de Limpar o quintal|5|0|0|4|3

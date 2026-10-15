@@ -30,7 +30,7 @@ class Eterna : Metas
     public override string ObterDetalhes()
     {
         // Implementação específica para metas eternas
-        return $"Meta Eterna: {Nome} - {Descricao} - {Pontos} pontos";
+        return $"[ ] Meta Eterna: {Nome} - ({Descricao}) - {Pontos} pontos";
     }
 
     public override string ObterRepresentacao()

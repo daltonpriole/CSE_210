@@ -1,0 +1,6 @@
+12
+MetaSimples|Mensagem Familiar|Dar uma mensagem na reuniao familiar|5|False
+MetaSimples|Leitura Discurso|Ler os discurso da ultima conferencia|2|False
+MetaEterna|Ler e Orar|Diariamente pela manha ler e Orar|2|0
+MetaDeListaDeTarefas|Jejuar todos os meses do ano|Jejuar|11|12|10|2
+MetaDeListaDeTarefas|tarefas do dia|Limpar quintal toda quinta|1|4|1|10

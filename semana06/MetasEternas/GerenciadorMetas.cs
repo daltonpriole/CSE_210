@@ -219,7 +219,7 @@ private void CarregarMetas()
                 }
                 else if (tipo == "MetaDeListaDeTarefas")
                 {
-                    _metas.Add(new ListaTarefas(int.Parse(partes[3]), int.Parse(partes[5]), int.Parse(partes[6]), partes[2], partes[1], int.Parse(partes[3])));
+                    _metas.Add(new ListaTarefas(int.Parse(partes[3]), int.Parse(partes[5]), int.Parse(partes[3]), partes[2], partes[1], int.Parse(partes[6])));
                 }
             }
         }

@@ -28,13 +28,16 @@ class Simples : Metas
 
     public override bool EstaConcluida()
     {
-        return _estaConcluido;
+        if (Pontos != 0)
+            return _estaConcluido = false;
+        else
+            return _estaConcluido = true;
     }
 
     public override string ObterDetalhes()
     {
         string status = _estaConcluido ? "[X]" : "[ ]";
-        return $"Meta Simples: {Nome} - {Descricao}";
+        return $"{status} Meta Simples: {Nome} - ({Descricao})";
     }
 
     public override string ObterRepresentacao()
